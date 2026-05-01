@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="uz">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ABN Test | Quiz</title>
+    <meta
+      name="description"
+      content="205 ta savol, vaqt hisoblagich va yakuniy natija chiqaradigan ABN quiz sahifasi."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell" id="app">
+      <section class="loading-screen" id="loading-screen">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>205 ta savol yuklanmoqda...</p>
+      </section>
+
+      <section class="quiz-screen hidden" id="quiz-screen" aria-live="polite">
+        <header class="quiz-header">
+          <div class="progress">
+            Savol <span id="current-question">1</span> /
+            <span id="total-questions">0</span>
+          </div>
+
+          <div class="timer-wrap" aria-label="Qolgan vaqt">
+            <span aria-hidden="true">Vaqt:</span>
+            <strong class="timer" id="timer">30</strong>
+          </div>
+
+          <button class="button secondary" type="button" id="pause-button">Pauza</button>
+          <button class="button danger" type="button" id="finish-button">Tugatish</button>
+        </header>
+
+        <div class="question-card">
+          <h1 class="question-text" id="question-text">Savol matni</h1>
+          <div class="options" id="options-container"></div>
+          <p class="explanation hidden" id="explanation"></p>
+        </div>
+
+        <div class="pause-panel hidden" id="pause-panel">
+          <p>Test pauzada. Davom ettirish uchun "Davom etish" tugmasini bosing.</p>
+        </div>
+
+        <section class="history-panel" aria-label="Javoblar tarixi">
+          <div class="history-title">
+            <h2>Tarix</h2>
+            <span id="history-count">0 ta</span>
+          </div>
+          <div class="history-list" id="history-list">
+            <p class="empty-history">Hali javob berilmadi.</p>
+          </div>
+        </section>
+      </section>
+
+      <section class="result-screen hidden" id="result-screen">
+        <div class="result-message">
+          <h1>Test yakunlandi</h1>
+
+          <p class="result-stats">
+            <span id="answered-count">0</span> ta savolga javob berildi.<br />
+            To'g'ri javoblar:
+            <strong><span id="correct-count">0</span> ta</strong>
+          </p>
+
+          <p class="winner-line">
+            Natija: <strong id="score-count">0</strong> ball,
+            <strong id="percent-count">0%</strong>
+            <span>(<span id="spent-time">0 daqiqa 0 soniya</span>)</span>
+          </p>
+
+          <p class="result-footer">O'z ustingizda ishlashda davom eting!</p>
+        </div>
+
+        <button class="button primary restart" type="button" id="restart-button">
+          Testni qayta ishlash
+        </button>
+
+        <section class="history-panel result-history" aria-label="Yakuniy javoblar tarixi">
+          <div class="history-title">
+            <h2>Javoblar tarixi</h2>
+            <span id="result-history-count">0 ta</span>
+          </div>
+          <div class="history-list" id="result-history-list"></div>
+        </section>
+      </section>
+    </main>
+
+    <script src="questions.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
